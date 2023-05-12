@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: grey;
+}
+.cards{
+    position: relative;
+    height: 400px;
+    width: 300px;
+    transform-style: preserve-3d;
+}
+
+
+.cards .face{
+   position: absolute;
+  top: 0;    
+  left: 0;
+  height: 100%;
+  width : 100%;
+  transform-style: preserve-3d;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 2s ease-in-out;
+    backface-visibility: hidden;
+    transform: perspective(500px) rotateY(0deg);  
+}
+
+.cards .face.front{
+  background-color: yellow;    
+  color: white;
+  
+}
+.cards .face.back{
+background:skyblue;
+color: white;
+  transform: perspective(500px) rotateY(180deg);
+}
+
+.cards:hover .face.front{
+    transform: perspective(500px) rotateY(360deg);
+}
+
+
+.cards:hover .face.back{
+    transform: perspective(500px) rotateY(360deg); 
+}
+  
